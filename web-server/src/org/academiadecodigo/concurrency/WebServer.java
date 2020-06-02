@@ -8,9 +8,6 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Multi-threaded simple web server implementation
- */
 public class WebServer {
 
     private static final Logger logger = Logger.getLogger(WebServer.class.getName());
@@ -64,12 +61,11 @@ public class WebServer {
 
             try {
 
-                // accepts client connections and instantiates client dispatchers
                 ClientDispatcher clientDispatcher = new ClientDispatcher(bindSocket.accept());
 
                 logger.log(Level.INFO, "new connection from " + clientDispatcher.getAddress());
 
-                // launch the client thread
+      
                 cachedPool.submit(clientDispatcher);
 
 
