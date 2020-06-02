@@ -20,8 +20,6 @@ public class HttpHelper {
     }
 
     public static String contentLength(long lenght) {
-
-        //an extra line is needed before content
         return "Content-Length: " + lenght + "\r\n\r\n";
     }
 
