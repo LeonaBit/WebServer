@@ -8,9 +8,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Web server client dispatcher
- */
 public class ClientDispatcher implements Runnable {
 
     private static final Logger logger = Logger.getLogger(ClientDispatcher.class.getName());
@@ -109,7 +106,6 @@ public class ClientDispatcher implements Runnable {
         String line = null;
         StringBuilder builder = new StringBuilder();
 
-        // read the full http request
         while ((line = in.readLine()) != null && !line.isEmpty()) {
             builder.append(line + "\n");
         }
